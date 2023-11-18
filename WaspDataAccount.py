@@ -1,3 +1,5 @@
+from binance.client import Client
+
 class Account:
     def __init__(self) -> None:
         self.api_key = 'o9jpkeFk9cszV6WtzZkJCO9MBJDJrQIw1IVESOLVrpZGsDh5Rc3TZkx5udoq6DCe'
@@ -8,4 +10,11 @@ class Account:
     
     def GetApiSecret(self):
         return self.api_secret
+    
+    def Login(self):
+        client = Client(self.GetApiKey(), self.GetApiSecret())
+        account_info = client.get_account()
+        return account_info
+
+    
     
