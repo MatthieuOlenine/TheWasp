@@ -2,19 +2,22 @@ import WaspService
 from time import sleep
  
 RUNNING = True
-Service = WaspService.Service()         # Donne accès au service de TheWasp
+Service = WaspService.Service()                 # Donne accès au service de TheWasp
 
 while RUNNING:
 
-    Service.LogIn()                         # connexion necessaire pour mettre à jour les datas
-    Service.AtributResponse()               # charge les données du marché et les trie dans 'Watched' et 'Normed' en conservant la dernière itération
-    Service.CompareMarket()                 # compare les dernières données du market avec la dernière itération
-    Service.AtributWallet()                 # charge les donnée du portefeuille et localise le wallet avec les fonds : 'pointer'
+    Service.LogIn()                             # connexion necessaire pour mettre à jour les datas
+    Service.AtributResponse()                   # charge les données du marché et les trie dans 'Watched' et 'Normed' en conservant la dernière itération
+    Service.CompareMarket()                     # compare les dernières données du market avec la dernière itération
+    Service.AtributWallet()                     # charge les donnée du portefeuille et localise le wallet avec les fonds : 'pointer'
 
-    winner = Service.GetWinner()            # transfere le nom du marché avec la plus haute perf dans 'winner'
-    normed = Service.GetNormed()            # transfere les dernières données de 'Normed' dans 'normed'
-    pointer = Service.GetPointer()          # transfere les données de 'Pointer' dans 'pointer'
-    spotwallet = Service.GetSpotWallet()    # transfere les données de 'SpotWallet' dans 'spotwallet'
+    winner = Service.GetWinner()                # transfere le nom du marché avec la plus haute perf dans 'winner'
+    normed = Service.GetNormed()                # transfere les dernières données de 'Normed' dans 'normed'
+    pointer = Service.GetPointer()              # transfere les données de 'Pointer' dans 'pointer'
+    spotwallet = Service.GetSpotWallet()        # transfere les données de 'SpotWallet' dans 'spotwallet'
+
+    if winner[0] != pointer[0][:-4]:
+        Service.ApplyConvert(pointer, winner)   # applique la transaction si il y en a une
 
     print('\ncurrent prices of devices\n')
     for b in normed:

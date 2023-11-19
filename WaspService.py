@@ -67,6 +67,9 @@ class Service:
         else:
             return ['USDT', -0.0]
 
+    def ApplyConvert(self, pointer, winner):
+        pass
+
     def GetPointer(self):
         # obtenir 'pointer' (actif le + important du portefeuille)
         return self.Pointer
