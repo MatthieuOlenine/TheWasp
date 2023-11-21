@@ -16,6 +16,10 @@ while RUNNING:
     pointer = Service.GetPointer()              # transfere les données de 'Pointer' dans 'pointer'
     spotwallet = Service.GetSpotWallet()        # transfere les données de 'SpotWallet' dans 'spotwallet'
 
+    Service.ApplyConvert(pointer, winner)       # donne l'ordre de faire la transaction
+
+    print(pointer, '\n', winner)
+
     if winner[0] != pointer[0][:-4]:
         Service.ApplyConvert(pointer, winner)   # applique la transaction si il y en a une
 
