@@ -62,45 +62,46 @@ class Service:
                 self.Winner = transit[l]
 
     def ApplyConvert(self, pointerfromabove, winnerfromabove):
-        print(round(pointerfromabove[1], 3))
-        if not pointerfromabove[0] == winnerfromabove[0]:                               # verifie que le wallet et le winner ne sont pas de l'USDT
-            if not pointerfromabove[0] == winnerfromabove[0][:-4]:                      # vérifie que le wallet et le winner ne sont pas identiques
-                if pointerfromabove[0] == 'XRP' and winnerfromabove[0][:-4] == 'BTC':
-                    self.AccountInstance.SellXrpBtc(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'BTC' and winnerfromabove[0][:-4] == 'XRP':
-                    self.AccountInstance.BuyXrpBtc(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'BNB' and winnerfromabove[0][:-4] == 'BTC':
-                    self.AccountInstance.SellBnbBtc(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'BTC' and winnerfromabove[0][:-4] == 'BNB':
-                    self.AccountInstance.BuyBnbBtc(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'XRP' and winnerfromabove[0][:-4] == 'ETH':
-                    self.AccountInstance.SellXrpEth(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'ETH' and winnerfromabove[0][:-4] == 'XRP':
-                    self.AccountInstance.BuyXrpEth(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'XRP' and winnerfromabove[0][:-4] == 'BNB':
-                    self.AccountInstance.SellXrpBnb(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'BNB' and winnerfromabove[0][:-4] == 'XRP':
-                    self.AccountInstance.BuyXrpBnb(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'BNB' and winnerfromabove[0][:-4] == 'ETH':
-                    self.AccountInstance.SellBnbEth(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'ETH' and winnerfromabove[0][:-4] == 'BNB':
-                    self.AccountInstance.BuyBnbEth(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'ETH' and winnerfromabove[0] == 'USDT':
-                    self.AccountInstance.SellEthUsdt(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'USDT' and winnerfromabove[0][:-4] == 'ETH':
-                    self.AccountInstance.BuyEthUsdt(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'BTC' and winnerfromabove[0] == 'USDT':
-                    self.AccountInstance.SellBtcUsdt(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'USDT' and winnerfromabove[0][:-4] == 'BTC':
-                    self.AccountInstance.BuyBtcUsdt(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'BNB' and winnerfromabove[0] == 'USDT':
-                    self.AccountInstance.SellBnbUsdt(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'USDT' and winnerfromabove[0][:-4] == 'BNB':
-                    self.AccountInstance.BuyBnbUsdt(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'XRP' and winnerfromabove[0] == 'USDT':
-                    self.AccountInstance.SellXrpUsdt(round(pointerfromabove[1], 3))
-                if pointerfromabove[0] == 'USDT' and winnerfromabove[0][:-4] == 'XRP':
-                    self.AccountInstance.BuyXrpUsdt(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'BTC' and winnerfromabove[0][:-4] == 'ETH':
+            self.AccountInstance.BuyEthBtc(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'ETH' and winnerfromabove[0][:-4] == 'BTC':
+            self.AccountInstance.SellEthBtc(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'XRP' and winnerfromabove[0][:-4] == 'BTC':
+            self.AccountInstance.SellXrpBtc(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'BTC' and winnerfromabove[0][:-4] == 'XRP':
+            self.AccountInstance.BuyXrpBtc(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'BNB' and winnerfromabove[0][:-4] == 'BTC':
+            self.AccountInstance.SellBnbBtc(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'BTC' and winnerfromabove[0][:-4] == 'BNB':
+            self.AccountInstance.BuyBnbBtc(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'XRP' and winnerfromabove[0][:-4] == 'ETH':
+            self.AccountInstance.SellXrpEth(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'ETH' and winnerfromabove[0][:-4] == 'XRP':
+            self.AccountInstance.BuyXrpEth(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'XRP' and winnerfromabove[0][:-4] == 'BNB':
+            self.AccountInstance.SellXrpBnb(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'BNB' and winnerfromabove[0][:-4] == 'XRP':
+            self.AccountInstance.BuyXrpBnb(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'BNB' and winnerfromabove[0][:-4] == 'ETH':
+            self.AccountInstance.SellBnbEth(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'ETH' and winnerfromabove[0][:-4] == 'BNB':
+            self.AccountInstance.BuyBnbEth(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'ETH' and winnerfromabove[0] == 'USDT':
+            self.AccountInstance.SellEthUsdt(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'USDT' and winnerfromabove[0][:-4] == 'ETH':
+            self.AccountInstance.BuyEthUsdt(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'BTC' and winnerfromabove[0] == 'USDT':
+            self.AccountInstance.SellBtcUsdt(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'USDT' and winnerfromabove[0][:-4] == 'BTC':
+            self.AccountInstance.BuyBtcUsdt(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'BNB' and winnerfromabove[0] == 'USDT':
+            self.AccountInstance.SellBnbUsdt(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'USDT' and winnerfromabove[0][:-4] == 'BNB':
+            self.AccountInstance.BuyBnbUsdt(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'XRP' and winnerfromabove[0] == 'USDT':
+            self.AccountInstance.SellXrpUsdt(round(pointerfromabove[1], 3))
+        if pointerfromabove[0] == 'USDT' and winnerfromabove[0][:-4] == 'XRP':
+            self.AccountInstance.BuyXrpUsdt(round(pointerfromabove[1], 3))
 
     def GetWinner(self):
         if float(self.Winner[1]) < 0:
