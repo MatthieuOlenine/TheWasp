@@ -18,7 +18,6 @@ while RUNNING:
     pointer = Service.GetPointer()              # transfere les données de 'Pointer' dans 'pointer'
     spotwallet = Service.GetSpotWallet()        # transfere les données de 'SpotWallet' dans 'spotwallet'
 
-<<<<<<< HEAD
     if not PREVENTFIRSTTRADE:
         print('________________________\n\ncurrent prices of devices\n')
         for b in normed:
